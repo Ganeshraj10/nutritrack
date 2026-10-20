@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/common :: head('Settings')}"></head>
+<body>
+<div class="app-shell">
+  <aside th:replace="~{fragments/common :: sidebar('settings')}"></aside>
+  <main class="main-content">
+    <header th:replace="~{fragments/common :: topbar('Settings','A few useful details about this local demo workspace.')}"></header>
+    <div class="page-body">
+      <div th:replace="~{fragments/common :: flash}"></div>
+      <div class="page-heading-row"><div><div class="section-kicker">YOUR SPACE, YOUR SETTINGS</div><h2 class="section-title">Profile and privacy</h2><p class="section-subtitle">Understand how this academic demonstration stores and handles data.</p></div><span class="chip">Local demo</span></div>
+      <div class="grid split-layout"><section class="card panel"><div class="panel-heading"><div><h2>Demo profile</h2><p>A visual placeholder only; authentication is not enabled.</p></div><div class="avatar" style="width:48px;height:48px;font-size:14px">GR</div></div><div class="settings-row"><span class="settings-icon">♙</span><div class="settings-copy"><strong>Guest wellness profile</strong><p>Demo user profile used to make the dashboard feel like a complete product. No real identity is required.</p></div><span class="settings-badge">Guest</span></div><div class="settings-row"><span class="settings-icon">▤</span><div class="settings-copy"><strong>Data storage</strong><p>Entries are kept in a local H2 database for coursework demonstrations and remain on this machine unless you manually share the files.</p></div><span class="settings-badge">Local</span></div><div class="settings-row"><span class="settings-icon">↧</span><div class="settings-copy"><strong>Export records</strong><p>Download a CSV of food diary entries for analysis in a spreadsheet.</p></div><a class="button button-outline button-small" th:href="@{/analytics/export.csv}">Export CSV</a></div></section>
+      <section class="card panel"><div class="panel-heading"><div><h3>Privacy and limitations</h3><p>Read this before using the demonstration.</p></div></div><div class="settings-row"><span class="settings-icon">◈</span><div class="settings-copy"><strong>Educational use only</strong><p>The nutrition values are sample estimates. They are not a diagnosis, treatment plan or personalized dietary recommendation.</p></div></div><div class="settings-row"><span class="settings-icon">♧</span><div class="settings-copy"><strong>No account security</strong><p>Login, access control and multi-user permissions are not implemented. Do not put real sensitive health information into this application.</p></div></div><div class="settings-row"><span class="settings-icon">⚙</span><div class="settings-copy"><strong>Testing-friendly architecture</strong><p>The application exposes service-layer logic and local endpoints for unit, functional, accessibility, performance and baseline security testing.</p></div></div><div style="margin-top:18px"><a class="button button-primary" th:href="@{/}">Back to overview ↗</a></div></section></div>
+      <div class="footer-note">NutriTrack Pro · Personal wellness, thoughtfully tracked · Demo data is illustrative and not medical advice.</div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

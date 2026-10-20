@@ -1,0 +1,1 @@
+Place junit-3.8.1.jar in this folder. Run ..\download-junit381.cmd to fetch it from Maven Central (or a public mirror). The JUnit jar is a third-party binary and is not bundled in this archive because the download environment could not retrieve it.

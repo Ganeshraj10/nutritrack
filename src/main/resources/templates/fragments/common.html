@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(pageTitle)">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123c32">
+  <title th:text="${pageTitle + ' | NutriTrack Pro'}">NutriTrack Pro</title>
+  <link rel="stylesheet" th:href="@{/css/app.css}">
+  <script defer th:src="@{/js/app.js}"></script>
+</head>
+<body>
+<aside th:fragment="sidebar(active)" class="sidebar" id="sidebar">
+  <a class="brand" th:href="@{/}" aria-label="NutriTrack Pro home"><span class="brand-mark">n<span>+</span></span><span class="brand-copy"><strong>nutri<span>track</span></strong><small>WELLNESS STUDIO</small></span></a>
+  <div class="workspace-label">WORKSPACE</div>
+  <nav class="primary-nav" aria-label="Primary navigation">
+    <a th:href="@{/}" th:classappend="${active == 'overview' ? ' active' : ''}"><span class="nav-symbol">◫</span> Overview</a>
+    <a th:href="@{/diary}" th:classappend="${active == 'diary' ? ' active' : ''}"><span class="nav-symbol">☷</span> Food diary</a>
+    <a th:href="@{/foods}" th:classappend="${active == 'foods' ? ' active' : ''}"><span class="nav-symbol">⌕</span> Food database</a>
+    <a th:href="@{/planner}" th:classappend="${active == 'planner' ? ' active' : ''}"><span class="nav-symbol">▦</span> Meal planner</a>
+    <a th:href="@{/goals}" th:classappend="${active == 'goals' ? ' active' : ''}"><span class="nav-symbol">◎</span> Nutrition goals</a>
+    <a th:href="@{/hydration}" th:classappend="${active == 'hydration' ? ' active' : ''}"><span class="nav-symbol">♧</span> Hydration</a>
+    <a th:href="@{/analytics}" th:classappend="${active == 'analytics' ? ' active' : ''}"><span class="nav-symbol">▥</span> Analytics</a>
+  </nav>
+  <div class="sidebar-spacer"></div>
+  <div class="sidebar-note"><div class="note-icon">✦</div><strong>Small steps add up.</strong><p>Consistency over perfection. Keep showing up for yourself.</p><a th:href="@{/goals}">Review your goals <span>↗</span></a></div>
+  <nav class="bottom-nav"><a th:href="@{/settings}" th:classappend="${active == 'settings' ? ' active' : ''}"><span class="nav-symbol">⚙</span> Settings</a></nav>
+  <div class="profile-mini"><div class="avatar">GR</div><div><strong>Guest wellness profile</strong><small>Local demo workspace</small></div><span class="profile-menu">···</span></div>
+</aside>
+<header th:fragment="topbar(pageTitle, subtitle)" class="topbar">
+  <div class="topbar-heading"><button class="mobile-menu" type="button" aria-label="Toggle navigation" data-menu-toggle>☰</button><div><div class="eyebrow">YOUR PERSONAL WELLNESS SPACE</div><h1 th:text="${pageTitle}">Overview</h1><p th:text="${subtitle}">A thoughtful look at your daily habits.</p></div></div>
+  <div class="topbar-actions"><form class="global-search" th:action="@{/foods}" method="get"><span>⌕</span><input name="q" placeholder="Search foods..." aria-label="Search foods"><kbd>↵</kbd></form><a class="icon-button" th:href="@{/analytics}" aria-label="View insights" title="View insights">♧</a><div class="top-date"><span class="online-dot"></span><span th:text="${#temporals.format(T(java.time.LocalDate).now(),'EEE, dd MMM')}">Today</span></div></div>
+</header>
+<div th:fragment="flash" class="flash-stack"><div th:if="${successMessage}" class="flash success" role="status"><span>✓</span><span th:text="${successMessage}"></span><button type="button" aria-label="Dismiss" data-dismiss>×</button></div><div th:if="${errorMessage}" class="flash error" role="alert"><span>!</span><span th:text="${errorMessage}"></span><button type="button" aria-label="Dismiss" data-dismiss>×</button></div></div>
+</body>
+</html>

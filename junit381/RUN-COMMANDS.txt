@@ -1,0 +1,28 @@
+WINDOWS COMMANDS - JUNIT 3.8.1 SWINGUI (NO MAVEN TEST COMMAND)
+
+Run these from the junit381 folder.
+
+1) Download the classic JUnit jar:
+   download-junit381.cmd
+
+2) Compile the standalone Java classes and five test classes:
+   compile.cmd
+
+3) Launch the Swing test runner for each module:
+   java -cp "lib\junit-3.8.1.jar;out" junit.swingui.TestRunner nutritrack.tests.FoodDiaryModuleTest
+   java -cp "lib\junit-3.8.1.jar;out" junit.swingui.TestRunner nutritrack.tests.FoodCatalogueModuleTest
+   java -cp "lib\junit-3.8.1.jar;out" junit.swingui.TestRunner nutritrack.tests.NutritionGoalModuleTest
+   java -cp "lib\junit-3.8.1.jar;out" junit.swingui.TestRunner nutritrack.tests.HydrationModuleTest
+   java -cp "lib\junit-3.8.1.jar;out" junit.swingui.TestRunner nutritrack.tests.NutritionAnalyticsModuleTest
+
+4) Launch all five suites in one SwingUI window:
+   java -cp "lib\junit-3.8.1.jar;out" junit.swingui.TestRunner nutritrack.tests.AllTests
+
+5) Alternative helper commands:
+   run-one.cmd FoodDiaryModuleTest
+   run-one.cmd FoodCatalogueModuleTest
+   run-one.cmd NutritionGoalModuleTest
+   run-one.cmd HydrationModuleTest
+   run-one.cmd NutritionAnalyticsModuleTest
+   run-all.cmd
+   run-console.cmd

@@ -1,0 +1,1 @@
+JUnit 3.8.1 is a third-party legacy framework published under the Common Public License (CPL) 1.0. This archive contains user-authored test harness source and a script to download the JUnit jar. JUnit source/artifact reference: https://central.sonatype.com/artifact/junit/junit/3.8.1
